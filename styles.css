@@ -1,7 +1,9 @@
-.container {
-    margin: 5rem;
+.container, .container {
+    margin: 50px;
 }
 
 h2 {
-    color: blue
+    /* color: blue; */
+    /* background-color: blueviolet; */
+    margin: 2px;
 }
