@@ -1,5 +1,5 @@
 :root {
-    --highlight: #01ff62;
+    --highlight: #01ff30;
     --background: #111;
 }
 /* p {
@@ -125,7 +125,7 @@ ul.topnav {
   
   ul.topnav li a:hover:not(.active) {background-color: #111;}
   
-  ul.topnav li a.active {background-color: #04AA6D;}
+  ul.topnav li a.active {background-color: #07fd07;}
   
   ul.topnav li.right {float: right;}
   
@@ -133,6 +133,14 @@ ul.topnav {
     ul.topnav li.right, 
     ul.topnav li {float: none;}
   }
+
+@media screen and (min-width: 1001px){
+  body {
+    margin:auto;
+    width: 80%;
+    vertical-align: center;
+  }
+}
 
 @media screen and (max-width: 1000px) {
     .project-card {
