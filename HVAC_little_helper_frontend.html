@@ -25,27 +25,55 @@
       <li><a href="index.html#contact">Contact</a></li>
       <li class="right"><a href="index.html#about">About Me</a></li>
     </ul>
-    <h1>HVAC little helper Svelte frontend</h1>
+    <h1>HVAC little helper Svelte frontend WP</h1>
     <h4>
-      Long description - Lorem ipsum dolor sit amet, consectetur adipisicing
-      elit. Eum consequuntur dicta quasi assumenda beatae, eius consequatur iure
-      veniam, magnam ullam quibusdam fuga asperiores quisquam impedit quod,
-      debitis soluta maxime commodi. Lorem ipsum dolor sit, amet consectetur
-      adipisicing elit. Similique magnam, ex nihil officiis, dolore suscipit
-      quas sint nisi corrupti repudiandae consequatur, accusamus sit ducimus
-      ipsum eaque. Ut nostrum error sapiente.
+      A work in progress at this moment, the frontend for the HVAC little helper
+      API will be the interface users will use for using the HVAC little helper
+      app. It is written in Svelte, at this moment I am waiting for the release
+      of Svelte 5. At this moment it has a login functionality, CRUD operations
+      for Companies and Projects, and a crude interfaces using Bootstrap
     </h4>
     <h3>Technologies</h3>
     <ol>
-      <li>Python</li>
-      <li>PostgreSQL</li>
+      <li><a href="https://svelte.dev/">Svelte</a></li>
     </ol>
-    <h3>Python libraries used</h3>
+    <h3>Npm libraries used</h3>
     <ol>
-      <li>FastAPI</li>
-      <li>SQL Alchemy</li>
-      <li>OAuth2</li>
-      <li>Pydantic</li>
+      <li>
+        <a href="https://www.npmjs.com/package/svelte-routing"
+          >svelte-routing</a
+        >
+      </li>
     </ol>
+    <a href="https://github.com/Pana-Florin-Ionut/HVAC_Little_Helper_frontend"
+      >Github link</a
+    >
+    <h4>Screenshots</h4>
+    <div class="carousel">
+      <div class="carousel-images">
+        <img
+          src="images/Companies.jpg"
+          width="100%"
+          height="100%"
+          alt="Image 1"
+        />
+        <img
+          src="images/informations.jpg"
+          width="100%"
+          height="100%"
+          alt="Image 2"
+        />
+        <!-- <img
+          src="images/MyPict.jfif"
+          width="100%"
+          height="100%"
+          alt="Image 3"
+        /> -->
+      </div>
+      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <script src="carouselScript.js"></script>
   </body>
 </html>
