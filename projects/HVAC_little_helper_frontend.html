@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HVAC Little Helper — Svelte Frontend — Project</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" type="image/x-icon" href="../images/terminal.png" />
+    <style>
+      /* Minimal carousel styling to match site look */
+      .carousel { position: relative; overflow: hidden; border: 1px solid var(--border); border-radius: 10px; background: var(--card); }
+      .carousel-images { display: flex; transition: transform .3s ease; }
+      .carousel img { width: 100%; height: auto; display: block; }
+      .carousel button { position: absolute; top: 50%; transform: translateY(-50%); border: 0; background: rgba(0,0,0,.4); color: #fff; padding: 6px 10px; cursor: pointer; }
+      .carousel .prev { left: 8px; }
+      .carousel .next { right: 8px; }
+    </style>
+  </head>
+  <body>
+    <header class="header" id="home" role="banner">
+      <h1>Florin Ionuț Pană</h1>
+      <p class="subtitle">Jira/Atlassian Automation • Python • Groovy • JavaScript</p>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar" aria-label="Sidebar">
+        <img class="Myimage" src="../images/MyPict.jfif" alt="Florin Ionuț Pană" width="120" height="120" loading="lazy"/>
+        <nav class="sidenav" aria-label="Section navigation">
+          <a href="../index.html#projects">Projects</a>
+          <a href="../index.html#about">About</a>
+          <a href="../index.html#cv">Experience</a>
+          <a href="../index.html#contact">Contact</a>
+        </nav>
+        <p><a class="btn btn--outline" href="../files/Florin Ionut Pana CV light.pdf" download>Download CV</a></p>
+      </aside>
+
+      <main class="content" id="main-content">
+        <h2>HVAC Little Helper — Svelte frontend (WIP)</h2>
+        <p class="section-intro">
+          UI for the HVAC API. Currently includes login, Companies & Projects CRUD, and a basic Bootstrap UI.
+        </p>
+
+        <h3>Tech</h3>
+        <ol>
+          <li><a href="https://svelte.dev/" target="_blank" rel="noopener">Svelte</a></li>
+          <li><a href="https://www.npmjs.com/package/svelte-routing" target="_blank" rel="noopener">svelte-routing</a></li>
+        </ol>
+
+        <p>
+          <a href="https://github.com/Pana-Florin-Ionut/HVAC_Little_Helper_frontend" target="_blank" rel="noopener">GitHub link</a> ·
+          <a href="../index.html#projects">Back to Projects</a>
+        </p>
+
+        <h3>Screenshots</h3>
+        <div class="carousel" aria-label="Screenshots carousel">
+          <div class="carousel-images">
+            <img src="../images/Companies.jpg" alt="Companies screen" />
+            <img src="../images/informations.jpg" alt="Information screen" />
+          </div>
+          <button class="prev" onclick="moveSlide(-1)" aria-label="Previous">&#10094;</button>
+          <button class="next" onclick="moveSlide(1)" aria-label="Next">&#10095;</button>
+        </div>
+
+        <footer class="footer" role="contentinfo">
+          <p>Images provided by <a href="https://www.freepik.com/">Freepik</a></p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="./carouselScript.js"></script>
+  </body>
+</html>

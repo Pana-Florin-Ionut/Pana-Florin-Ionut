@@ -1,15 +1,21 @@
-const accordionItems = document.querySelectorAll(".accordion-item");
+// Accordion toggle (accessible-ish)
+document.querySelectorAll('.accordion-item').forEach((item) => {
+  const btn = item.querySelector('.accordion-button');
+  const content = item.querySelector('.accordion-content');
+  if (!btn || !content) return;
 
-accordionItems.forEach((item) => {
-  const accordionButton = item.querySelector(".accordion-button");
-  accordionButton.addEventListener("click", () => {
-    const currentActiveItem = document.querySelector(".accordion-item.active");
-
-    // If another item is already open, close it
-    if (currentActiveItem && currentActiveItem !== item) {
-      currentActiveItem.classList.remove("active");
+  btn.addEventListener('click', () => {
+    const isActive = item.classList.contains('active');
+    document.querySelectorAll('.accordion-item.active').forEach((open) => {
+      open.classList.remove('active');
+      const b = open.querySelector('.accordion-button');
+      if (b) b.setAttribute('aria-expanded', 'false');
+    });
+    if (!isActive) {
+      item.classList.add('active');
+      btn.setAttribute('aria-expanded', 'true');
+    } else {
+      btn.setAttribute('aria-expanded', 'false');
     }
-
-    item.classList.toggle("active");
   });
 });

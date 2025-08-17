@@ -1,258 +1,217 @@
 :root {
-    --highlight: #01ff30;
-    --background: #111;
+  --highlight: #01ff30;
+  --background: #111;
+  --text: #efefef;
+  --card: #171717;
+  --muted: #9aa0a6;
+  --accent: #00ffff;
+  --border: #2a2a2a;
 }
-/* p {
-    color: white
-} */
-html {
-    scroll-padding-top: 70px; /* height of sticky header */
-  }
+
+* { box-sizing: border-box; }
+
+html { scroll-padding-top: 16px; }
 
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    /* padding-top: 40px; */
-    background-color: #000;
-    color: #efefef;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  margin: 0;
+  background: #000;
+  color: var(--text);
+  line-height: 1.6;
 }
 
+/* Header */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: var(--background);
+  padding: 24px 20px;
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+}
+.header h1 {
+  margin: 0 0 4px 0;
+  font-size: clamp(28px, 4vw, 42px);
+  color: var(--highlight);
+}
+.subtitle { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+/* Layout: sidebar + content */
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px;
 }
 
-.header h1:first-child {
-    font-size: 48px;
-    color: var(--highlight);
-    margin-right: 20px;
+/* Sidebar */
+.sidebar {
+  position: sticky;
+  top: 12px;
+  align-self: start;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
 }
 
-.header a {
-    color: #ccc;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* p:hover {
-    color: rgb(250, 235, 207)
-} */
-.main {
-    padding: 20px;
-    /* display: flex; */
-    text-align: center;
-}
-
-.about,
-.projects,
-.contact {
-    margin-bottom: 40px;
-}
-
-.about p,
-.projects p,
-.contact p {
-    line-height: 1.5;
-}
-.about {
-    margin-left: 10%;
-    display: grid;
-    width: 80%;
-}
-.projects {
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.project-card {
-    width: 45%;
-    background-color: var(--background);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px; 
-}
-.project-card:hover{
-    background-color: rgb(37, 37, 37);
-}
-
-.project-card h3 {
-    color: var(--highlight);
-    margin-bottom: 10px;
-}
-
-.project-card a {
-    color: #00ffff;
-    text-decoration: none;
-}
 .Myimage {
-    border-radius: 50%;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  display: block;
+  margin: 0 auto 12px;
 }
 
-.contact {
-    text-align: center;
+.sidenav {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
 }
-ul {
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
-  }
-ul.topnav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: var(--background);
-    /* border: rgb(236, 236, 236) 1px solid; */
-    border-bottom: 1px solid rgb(255, 203, 203)
-  }
-  
-  ul.topnav li {float: left;}
-  
-  ul.topnav li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  ul.topnav li a:hover:not(.active) {background-color: #111;}
-  
-  ul.topnav li a.active {background-color: #07fd07;}
-  
-  ul.topnav li.right {float: right;}
-  
-  @media screen and (max-width: 600px) {
-    ul.topnav li.right, 
-    ul.topnav li {float: none;}
-  }
-
-@media screen and (min-width: 1001px){
-  body {
-    margin:auto;
-    width: 80%;
-    vertical-align: center;
-  }
+.sidenav a {
+  text-decoration: none;
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+.sidenav a:hover,
+.sidenav a:focus {
+  background: #1a1a1a;
 }
 
-@media screen and (max-width: 1000px) {
-    .project-card {
-      width: 80%; /* 100% width on screens less than 768px */
-    }
-    .projects {
-      flex-direction: column; /* Stack project cards vertically */
-    }
-  }
-@media screen and (max-width: 700px) {
-    .project-card {
-      width: 100%; /* 100% width on screens less than 768px */
-    }
-    .projects {
-      flex-direction: column; /* Stack project cards vertically */
-    }
-  }
+.quick-contact {
+  margin-top: 8px;
+  border-top: 1px dashed var(--border);
+  padding-top: 10px;
+}
+.quick-contact h3 { margin: 0 0 6px 0; font-size: 1rem; color: var(--muted); }
 
+.notice {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+.notice--subtle { color: #c5c5c5; opacity: 0.85; }
 
-
-  .accordion {
-  border: 1px solid #ddd;
-  margin-bottom: 20px;
+/* Content */
+.content {
+  min-width: 0;
 }
 
-.accordion-item {
-  background-color: var(--background); /* Inherit background color from root */
-  padding: 10px 15px;
-  border-bottom: 1px solid #ddd;
+.section-intro {
+  margin-top: -6px;
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
+/* Projects */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+.project-card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  transition: transform .15s ease, background-color .2s ease, border-color .2s ease;
+}
+.project-card:hover {
+  background-color: #1c1c1c;
+  border-color: #3a3a3a;
+  transform: translateY(-2px);
+}
+.project-card h3 {
+  color: var(--highlight);
+  margin: 0 0 8px 0;
+}
+.project-card p { margin: 0 0 12px 0; }
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  background: var(--accent);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.btn--outline {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+/* Accordion (Experience) */
+.accordion {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.accordion-item + .accordion-item { border-top: 1px solid var(--border); }
 .accordion-button {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   text-align: left;
-  padding: 15px;
-  background-color: inherit; /* Inherit background color */
+  padding: 16px;
+  background: var(--card);
+  color: var(--text);
   border: none;
   cursor: pointer;
   outline: none;
-  transition: background-color 0.3s ease-in-out;
+  font-size: 1rem;
+  transition: background-color .2s ease;
 }
-
-.accordion-button:hover {
-  background-color: slightlylighter(var(--background)); /* Slightly lighter hover effect */
-}
-
-.accordion-button h3 {
-  margin: 0;
-  font-weight: normal;
-}
-
+.accordion-button:hover { background-color: #222; }
 .accordion-content {
-  padding: 0 15px;
+  background: #141414;
+  border-top: 1px solid var(--border);
+  padding: 0 16px 16px;
   display: none;
-  overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
+}
+.accordion-item.active .accordion-content { display: block; }
+.accordion-content ul { margin: 12px 0 0 18px; }
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 18px 0 0;
+  color: var(--muted);
 }
 
-.accordion-item.active .accordion-content {
-  display: block;
-  max-height: 100px; /* Adjust max-height as needed */
+/* Responsive */
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+    align-items: center;
+  }
+  .sidenav {
+    grid-auto-flow: column;
+    justify-content: start;
+    overflow-x: auto;
+  }
 }
 
-
-
-.carousel {
-  position: relative;
-  max-width: 1600px;
-  margin: auto;
-  overflow: hidden;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  background-color: #fff;
+a {
+  color: #007acc; /* sau orice altă culoare */
+  text-decoration: none; /* scoate sublinierea */
 }
 
-.carousel-images {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+a:hover {
+  color: #005f99; /* nuanță mai închisă la hover */
+  text-decoration: underline; /* opțional, ca să arate clicabil */
 }
 
-.carousel-images img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-}
-
-button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.red {
-  color: red;
+a:visited {
+  color: #007acc; /* la fel ca normal, ca să nu fie mov */
 }

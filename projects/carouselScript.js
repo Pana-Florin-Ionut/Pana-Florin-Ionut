@@ -1,8 +1,13 @@
 let currentIndex = 0;
 
 function showSlide(index) {
-  const slides = document.querySelectorAll(".carousel-images img");
+  const container = document.querySelector(".carousel-images");
+  if (!container) return;
+
+  const slides = container.querySelectorAll("img");
   const totalSlides = slides.length;
+
+  if (totalSlides === 0) return;
 
   if (index >= totalSlides) {
     currentIndex = 0;
@@ -13,9 +18,7 @@ function showSlide(index) {
   }
 
   const offset = -currentIndex * 100;
-  document.querySelector(
-    ".carousel-images"
-  ).style.transform = `translateX(${offset}%)`;
+  container.style.transform = `translateX(${offset}%)`;
 }
 
 function moveSlide(step) {
